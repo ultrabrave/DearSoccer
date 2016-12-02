@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "585472157038",
+    "firebase_url": "https://dearsoccer-cd15b.firebaseio.com",
+    "project_id": "dearsoccer-cd15b",
+    "storage_bucket": "dearsoccer-cd15b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585472157038:android:01e59766f64d9b34",
+        "android_client_info": {
+          "package_name": "cl.enexo.dearsoccer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585472157038-i80so94c1v5lqbvdlejo32l5406kdg2a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cl.enexo.dearsoccer",
+            "certificate_hash": "24CE09C90C7D8E164F700CC841470731401B257F"
+          }
+        },
+        {
+          "client_id": "585472157038-u9og0s4ajnm9ertpq3k4bgj66ahno036.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC55M1PjXtCNvLydlBwD298RMHr7IjnGjo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585472157038-u9og0s4ajnm9ertpq3k4bgj66ahno036.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
