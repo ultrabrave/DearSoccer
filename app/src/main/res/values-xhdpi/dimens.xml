@@ -1,0 +1,38 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tamaño_texto">27sp</dimen>
+    <dimen name="tamaño_texto_login">30sp</dimen>
+    <dimen name="tamaño_texto_pass">26sp</dimen>
+    <dimen name="tamaño_texto_pequeño">20sp</dimen>
+    <dimen name="tamaño_encendido_motor">31sp</dimen>
+    <dimen name="tamaño_blockassist">34sp</dimen>
+    <dimen name="tamaño_exceso_velocidad">31sp</dimen>
+    <dimen name="tamaño_exceso_velocidad_1">31sp</dimen>
+    <dimen name="tamaño_km_mantencion">31sp</dimen>
+    <dimen name="tamaño_km_mantencion_1">30sp</dimen>
+    <dimen name="tamaño_texto_boton">35sp</dimen>
+    <dimen name="tamaño_titulo">50sp</dimen>
+    <dimen name="tamaño_map_patente">32sp</dimen>
+    <dimen name="tamaño_map_patente_1">28sp</dimen>
+    <dimen name="tamaño_map_fecha">32sp</dimen>
+    <dimen name="tamaño_map_fecha_1">28sp</dimen>
+    <dimen name="tamaño_map_velocidad">32sp</dimen>
+    <dimen name="tamaño_map_velocidad_1">28sp</dimen>
+    <dimen name="tamaño_alerta_encendido">22sp</dimen>
+    <dimen name="tamaño_alerta_encendido_1">15sp</dimen>
+    <dimen name="tamaño_alerta_patente">32sp</dimen>
+    <dimen name="tamaño_fragm_alerta_motor">28sp</dimen>
+    <dimen name="tamaño_fragm_alerta_bloq">28sp</dimen>
+    <dimen name="tamaño_fragm_alerta_velo">28sp</dimen>
+    <dimen name="tamaño_fragm_alerta_mant">25sp</dimen>
+    <dimen name="tamaño_fragm_block_paten">30sp</dimen>
+    <dimen name="tamaño_fragm_block_paten_1">37sp</dimen>
+    <dimen name="tamaño_fragm_block_fecha">30sp</dimen>
+    <dimen name="tamaño_fragm_block_fecha_1">37sp</dimen>
+    <dimen name="tamaño_fragm_block_passw">30sp</dimen>
+    <dimen name="tamaño_fragm_block_bloqu">20sp</dimen>
+    <dimen name="tamaño_fragm_block_desbl">20sp</dimen>
+    <dimen name="tamaño_iconos">12sp</dimen>
+</resources>
