@@ -42,12 +42,14 @@
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="NAME"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_name_item_mymatches"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="PLACEEE"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_place_item_mymatches"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,6 +66,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="80"
                     android:text="Partido 1, Plaza de maipú"
+                    android:textColor="@color/colorBlueDarkPress"
                     android:id="@+id/tv_texto_visible_mymatches"/>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -86,6 +89,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="80"
                     android:text="COUNTINTEGRANTS"
+                    android:textColor="@color/colorBlueDarkPress"
                     android:id="@+id/tv_countintegrants_item_mymatches"/>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -97,6 +101,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="INTEGRANTS"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_integrants_item_mymatches"/>
 
             <TextView
@@ -104,31 +109,106 @@
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="DURATION"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_duration_item_mymatches"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="TIMESTAMPS"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_timestamps_item_mymatches"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text=""
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_idmatch_item_mymatches"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text=""
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_creator_item_mymatches"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text=""
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_idsintegrants_item_mymatches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_date_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_hour_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_country_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_city_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_locality_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_price_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_type_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_description_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_lat_item_mytches"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_lon_item_mytches"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

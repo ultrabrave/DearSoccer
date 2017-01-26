@@ -4,10 +4,9 @@ import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import cl.enexo.dearsoccer.R;
-import cl.enexo.dearsoccer.views.CreatedFragment;
-import cl.enexo.dearsoccer.views.MatchFragment;
-import cl.enexo.dearsoccer.views.ToPlayFragment;
+import cl.enexo.dearsoccer.views.listMatchs.fragments.CreatedFragment;
+import cl.enexo.dearsoccer.views.listMatchs.fragments.MatchFragment;
+import cl.enexo.dearsoccer.views.listMatchs.fragments.ToPlayFragment;
 
 /**
  * Created by Kevin on 29-11-2016.

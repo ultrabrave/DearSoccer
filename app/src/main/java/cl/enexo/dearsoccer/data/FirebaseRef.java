@@ -24,5 +24,8 @@ public class FirebaseRef {
     public DatabaseReference Players(){
         return root().child("match").child("Players");
     }
+    public DatabaseReference Countrys(){
+        return root().child("country");
+    }
 
 }
