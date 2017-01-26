@@ -43,11 +43,13 @@
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="NAME"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_name_item_match"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
+                android:textColor="@color/colorBlueDarkPress"
                 android:text="PLACEEE"
                 android:id="@+id/tv_place_item_match"/>
             <LinearLayout
@@ -61,15 +63,11 @@
                     android:layout_height="match_parent"
                     android:layout_weight="10"></LinearLayout>
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="80"
+                    android:textColor="@color/colorBlueDarkPress"
                     android:text="Partido 1, Plaza de maipú"
                     android:id="@+id/tv_texto_visible_match"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"></LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,23 +79,46 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="10"></LinearLayout>
-
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="COUNTINTEGRANTS"
+                    android:textColor="@color/colorBlueDarkPress"
                     android:id="@+id/tv_countintegrants_item_match"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:weightSum="100"
+                android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="10"></LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horario"
+                    android:textColor="@color/colorBlueDarkPress"
+                    />
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
+                    ></View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00 hrs"
+                    android:textColor="@color/colorBlueDarkPress"
+                    android:id="@+id/tv_hour_item_match"/>
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="INTEGRANTS"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_integrants_item_match"/>
 
             <TextView
@@ -105,31 +126,100 @@
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="DURATION"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_duration_item_match"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text="TIMESTAMPS"
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_timestamps_item_match"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text=""
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_idmatch_item_match"/>
             <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0"
             android:text=""
+                android:textColor="@color/colorBlueDarkPress"
             android:id="@+id/tv_creator_item_match"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0"
                 android:text=""
+                android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_idsintegrants_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_date_item_match"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_country_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_city_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_locality_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_price_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_type_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_description_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_lat_item_match"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                android:text=""
+                android:textColor="@color/colorBlueDarkPress"
+                android:id="@+id/tv_lon_item_match"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
