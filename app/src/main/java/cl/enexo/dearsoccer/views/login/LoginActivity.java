@@ -19,16 +19,15 @@ public class LoginActivity extends Activity implements LoginCallback {
         new ValidateLogin(this).login();
     }
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            okloged();
+            okLoged();
         }
     }
 
-    public void okloged()
+    public void okLoged()
     {
         Intent i = new Intent(this,ConfigActivity.class);
         i.putExtra("WHERE","INIT");
@@ -37,7 +36,7 @@ public class LoginActivity extends Activity implements LoginCallback {
 
     @Override
     public void okLogin() {
-       okloged();
+       okLoged();
     }
 
     @Override

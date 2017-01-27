@@ -10,7 +10,7 @@ import cl.enexo.dearsoccer.models.Match;
  */
 
 public class ValidationNewMatch {
-    private int error = 0;
+
     private CallBackNewMatch callBackNewMatch;
 
     public ValidationNewMatch(CallBackNewMatch callBackNewMatch) {
@@ -19,6 +19,7 @@ public class ValidationNewMatch {
 
     public void addMatch(String name,String date,String hour,String place, String lat, String lon,String duration,String price,String type,String description,String year,String month,String day,String country,String city,String locality)
     {
+        int error = 0;
         if (name == null || name.length() == 0)
         {
             error = 1;

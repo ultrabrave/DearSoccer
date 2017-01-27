@@ -1,5 +1,4 @@
 package cl.enexo.dearsoccer.views.config;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -21,27 +20,26 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import cl.enexo.dearsoccer.BD.Bd;
 import cl.enexo.dearsoccer.R;
 import cl.enexo.dearsoccer.background.ConfigSelected;
-import cl.enexo.dearsoccer.data.FirebaseRef;
 import cl.enexo.dearsoccer.models.Config;
 import cl.enexo.dearsoccer.views.listMatchs.principal.PrincipalActivity;
 import cl.enexo.dearsoccer.views.initPage.MainActivity;
 
 public class ConfigActivity extends Activity implements ConfigSelectedCallback {
+    LinearLayout l1;
+    LinearLayout l2;
+    ImageView gyroView;
     private Spinner spcountry;
     private Spinner spcity;
     private Spinner splocality;
@@ -49,56 +47,35 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
     String areaName = "";
     String areaName2 = "";
     String areaName3 = "";
-    private Button btnselfecha;
     private Dialog dialog;
-    private CompactCalendarView calendarView;
     private TextView tvmonth;
     private TextView tvmonthdialog;
     private TextView tvdaydialog;
     private TextView tvyeardialog;
-    private TextView btncancelcalendar;
-    private TextView btnokcalendar;
-    private int year;
     private String yearString;
-    private int month;
     private String monthString;
-    private int day;
     private String dayString;
     private TextView tvdate;
-    private Button okbtn;
-    private ProgressDialog pd = null;
     private ProgressDialog dialogprogress;
-    LinearLayout linear_config;
-    LinearLayout l1;
-    LinearLayout l2;
-    private String mycountry;
-    private String mycity;
-    private String mylocality;
     private int ifconfig = 0;
-    private FirebaseRef ref = new FirebaseRef();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
-        Intent x = getIntent();
-        String where = x.getStringExtra("WHERE");
-        linear_config = (LinearLayout) findViewById(R.id.linear_config);
         l1 = (LinearLayout) findViewById(R.id.linear_screen_config);
         l2 = (LinearLayout) findViewById(R.id.linear_loading_config);
-        ImageView gyroView = (ImageView) findViewById(R.id.img_loading_config);
+        gyroView = (ImageView) findViewById(R.id.img_loading_config);
         gyroView.setBackgroundResource(R.drawable.loading_gif);
         AnimationDrawable gyroAnimation = (AnimationDrawable) gyroView.getBackground();
         gyroAnimation.start();
-        dialogprogress = new ProgressDialog(ConfigActivity.this);
+        dialogprogress = new ProgressDialog(this);
         spcountry = (Spinner) findViewById(R.id.sp_country_config);
         spcity = (Spinner) findViewById(R.id.sp_city_config);
         splocality = (Spinner) findViewById(R.id.sp_locality_config);
-        btnselfecha = (Button) findViewById(R.id.btn_sel_fecha_config);
         tvdate = (TextView) findViewById(R.id.tvdateconfig);
-        okbtn = (Button) findViewById(R.id.btn_ok_config);
 
-
+        Button btnselfecha = (Button) findViewById(R.id.btn_sel_fecha_config);
         btnselfecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +83,7 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
                 dialog.show();
             }
         });
-
+        Button okbtn = (Button) findViewById(R.id.btn_ok_config);
         okbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,7 +92,8 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
             }
         });
 
-        if (where.equals("INIT")) {
+        Intent dataintent = getIntent();
+        if (dataintent.getStringExtra("WHERE").equals("INIT")) {
             new Configselect(ConfigActivity.this).execute(getApplicationContext());
         }
 
@@ -264,7 +242,6 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
 
 
     private class SpinnerLocalities extends AsyncTask {
-
         @Override
         protected Object doInBackground(Object[] objects) {
             return 0;
@@ -279,7 +256,6 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
             LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             l1.setLayoutParams(params1);
-
             LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(
                     0, 0);
             l2.setLayoutParams(params2);
@@ -295,8 +271,6 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
         tvmonthdialog = (TextView) dialog.findViewById(R.id.tvmonthdialog);
         tvdaydialog = (TextView) dialog.findViewById(R.id.tvdaydialog);
         tvyeardialog = (TextView) dialog.findViewById(R.id.tvyeardialog);
-        btnokcalendar = (Button) dialog.findViewById(R.id.btnokcalendar);
-        btncancelcalendar = (Button) dialog.findViewById(R.id.btncancelcalendar);
         final SimpleDateFormat formatter = new SimpleDateFormat("MMM");
         final SimpleDateFormat formatter2 = new SimpleDateFormat("dd");
         final SimpleDateFormat formatter3 = new SimpleDateFormat("yyyy");
@@ -306,15 +280,15 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
         tvmonthdialog.setText(formatter.format(cDate).toUpperCase().replace(".", ""));
         tvdaydialog.setText(formatter2.format(cDate).toUpperCase().replace(".", "").replace(":", ""));
         tvyeardialog.setText(formatter3.format(cDate).toUpperCase().replace(".", "").replace(":", ""));
-        calendarView = (CompactCalendarView) dialog.findViewById(R.id.mycalendar);
 
+        TextView btncancelcalendar = (Button) dialog.findViewById(R.id.btncancelcalendar);
         btncancelcalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
             }
         });
-
+        Button btnokcalendar = (Button) dialog.findViewById(R.id.btnokcalendar);
         btnokcalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -322,7 +296,7 @@ public class ConfigActivity extends Activity implements ConfigSelectedCallback {
                 changeDate();
             }
         });
-
+        final CompactCalendarView calendarView = (CompactCalendarView) dialog.findViewById(R.id.mycalendar);
         calendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
