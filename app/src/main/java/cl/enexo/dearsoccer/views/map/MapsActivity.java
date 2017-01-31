@@ -102,7 +102,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Handler h = new Handler(Looper.getMainLooper());
         h.post(new Runnable() {
             public void run() {
-                mensaje("Dirección inválida");
+                showMessage("Dirección inválida");
             }
         });
     }
@@ -112,7 +112,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Handler h = new Handler(Looper.getMainLooper());
         h.post(new Runnable() {
             public void run() {
-                mensaje("Sin acceso a la red, favor vuelva a intentar");
+                showMessage("Sin acceso a la red, favor vuelva a intentar");
             }
         });
     }
@@ -143,7 +143,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private void mensaje(String mensaje) {
+        private void showMessage(String mensaje) {
         android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(this).create();
         alertDialog.setTitle("Atención:");
         alertDialog.setMessage(mensaje);
