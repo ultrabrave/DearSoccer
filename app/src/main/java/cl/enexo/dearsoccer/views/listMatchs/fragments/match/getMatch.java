@@ -1,12 +1,10 @@
 package cl.enexo.dearsoccer.views.listMatchs.fragments.match;
 import android.app.Activity;
 import android.content.Context;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.ProgressBar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -44,7 +42,11 @@ public class GetMatch {
         Query queryref = reference.startAt(config.getDay()+"-"+config.getMonth()+"-"+config.getYear()).endAt(config.getDayfinal()+"-"+config.getMonthfinal()+"-"+config.getYearfinal()).orderByChild("date");
         AdapterMatch adapter = new AdapterMatch(Match.class, R.layout.item_match, MatchHolder.class, queryref,activity);
         recyclerView.setAdapter(adapter);
-        coordinatorLayout.removeView(progressBar);
-     
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                coordinatorLayout.removeView(progressBar);
+            }
+        },7000);
     }
 }

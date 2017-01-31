@@ -88,8 +88,5 @@ public class AdapterMatch extends FirebaseRecyclerAdapter<Match, MatchHolder>{
                 activity.startActivity(i);
             }
         });
-
-
-
     }
 }
