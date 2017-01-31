@@ -17,9 +17,35 @@ public class ValidationNewMatch {
         this.callBackNewMatch = callBackNewMatch;
     }
 
-    public void addMatch(String name,String date,String hour,String place, String lat, String lon,String duration,String price,String type,String description,String year,String month,String day,String country,String city,String locality)
+    public void addMatch(String name,String date,String hour,String place, String lat, String lon,String duration,String price,String type,String description,String dateToValidate,String country,String city,String locality)
     {
+        String year = "";
+        String month = "";
+        String day = "";
+        try {
+            String[] datesplit = dateToValidate.split("-");
+            year =  datesplit[2];
+            month =  datesplit[1];
+            day =  datesplit[0];
+        }
+        catch (Exception e)
+        {
+            year = "";
+            month = "";
+            day = "";
+        }
+        String dur = "";
+        try {
+            String[] durationsplit = duration.split(" ");
+            dur = durationsplit[0];
+        }
+        catch (Exception e)
+        {
+            dur = "";
+        }
+
         int error = 0;
+
         if (name == null || name.length() == 0)
         {
             error = 1;
@@ -44,7 +70,7 @@ public class ValidationNewMatch {
         {
         error = 1;
         }
-        if (duration == null || duration.length() == 0)
+        if (dur == null || dur.length() == 0)
         {
             error = 1;
         }
@@ -102,10 +128,9 @@ public class ValidationNewMatch {
                 String timestamps = String.valueOf(System.currentTimeMillis());
                 String idmatch = iduser+name+timestamps;
                 String idsintegrans = iduser + ";";
-                Match match = new Match(idmatch,name,place,duration,integrants,countintegrants,timestamps,creator,idsintegrans,lat,lon,year,month,day,date,hour,country,city,locality,price,type,description);
-                FirebaseDatabase.getInstance().getReference().child("match").child("country").child(country).child("city").child(city).child("locality").child(locality).child("year").child(year).child("month").child(month).child("day").child(day).child("public").child("match").child(iduser+name+timestamps).setValue(match);
-                FirebaseDatabase.getInstance().getReference().child("match_creator").child("user").child(iduser+";").child(iduser+name+timestamps).setValue(match);
-                //INSERT IN FIREBASE
+                Match match = new Match(idmatch,name,place,dur,integrants,countintegrants,timestamps,creator,idsintegrans,lat,lon,year,month,day,date,hour,country,city,locality,price,type,description);
+                FirebaseDatabase.getInstance().getReference().child(locality).child(iduser+name+timestamps).setValue(match);
+                FirebaseDatabase.getInstance().getReference().child("match_creator").child(iduser+";").child(iduser+name+timestamps).setValue(match);
                 callBackNewMatch.ok();
             }
             catch (Exception e)

@@ -7,6 +7,5 @@ import cl.enexo.dearsoccer.models.Config;
  */
 
 public interface ConfigSelectedCallback {
-    void noConfig();
     void ok(Config config);
 }

@@ -22,13 +22,13 @@ public class ValidationParticipe {
     public void participeMatch(Match mymatch,String[] ids)
     {
         try {
-            FirebaseDatabase.getInstance().getReference().child("match_creator").child("user").child(ids[0] + ";").child(mymatch.idmatch).setValue(mymatch);
+            FirebaseDatabase.getInstance().getReference().child("match_creator").child(ids[0] + ";").child(mymatch.idmatch).setValue(mymatch);
 
             for (int i = 1; i < ids.length; i++) {
-                FirebaseDatabase.getInstance().getReference().child("match_participer").child("user").child(ids[i] + ";").child("match").child(mymatch.idmatch).setValue(mymatch);
+                FirebaseDatabase.getInstance().getReference().child("match_participer").child(ids[i] + ";").child(mymatch.idmatch).setValue(mymatch);
             }
 
-            FirebaseDatabase.getInstance().getReference().child("match").child("country").child(mymatch.country).child("city").child(mymatch.city).child("locality").child(mymatch.locality).child("year").child(mymatch.year).child("month").child(mymatch.month).child("day").child(mymatch.day).child("public").child("match").child(mymatch.idmatch).setValue(mymatch).addOnSuccessListener(new OnSuccessListener<Void>() {
+            FirebaseDatabase.getInstance().getReference().child(mymatch.locality).child(mymatch.idmatch).setValue(mymatch).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     callback.ok();

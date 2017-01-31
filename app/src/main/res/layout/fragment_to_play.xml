@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondoverdoso"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="cl.enexo.dearsoccer.views.listMatchs.fragments.MatchFragment">
+    tools:context="cl.enexo.dearsoccer.views.listMatchs.fragments.match.MatchFragment">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_toplay"
         android:layout_width="match_parent"

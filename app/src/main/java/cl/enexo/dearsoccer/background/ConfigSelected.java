@@ -7,26 +7,20 @@ import android.os.AsyncTask;
 import cl.enexo.dearsoccer.BD.Bd;
 import cl.enexo.dearsoccer.views.config.ConfigSelectedCallback;
 import cl.enexo.dearsoccer.models.Config;
-
 /**
  * Created by Kevin on 24-01-2017.
  */
-
 public class ConfigSelected extends AsyncTask<Context, Void, Config> {
     private ConfigSelectedCallback callback;
     public ConfigSelected(ConfigSelectedCallback callback) {
         this.callback = callback;
     }
-
     @Override
     protected Config doInBackground(Context... contexts) {
         Context mycontext = null;
         Config config = null;
         try {
-
-            for (Context context : contexts) {
-                mycontext = context;
-            }
+            mycontext = contexts[0];
             Bd usdbh = new Bd(mycontext, "DB_DEARSOCCER", null, 1);
             SQLiteDatabase db = usdbh.getWritableDatabase();
             String country = usdbh.getCountrySelected(db);
@@ -37,7 +31,12 @@ public class ConfigSelected extends AsyncTask<Context, Void, Config> {
             String year = datesplit[0];
             String month = datesplit[1];
             String day = datesplit[2];
-            config = new Config(country, city, locality, year, month, day);
+            String datef = usdbh.getDateFinSelected(db);
+            String[] datesplitf = datef.split("-");
+            String yearf = datesplitf[0];
+            String monthf = datesplitf[1];
+            String dayf = datesplitf[2];
+            config = new Config(country, city, locality, year, month, day,yearf,monthf,dayf);
         }
         catch (Exception e)
         {
@@ -51,10 +50,6 @@ public class ConfigSelected extends AsyncTask<Context, Void, Config> {
     protected void onPostExecute(Config config) {
         if (config != null) {
             callback.ok(config);
-        }
-        else
-        {
-            callback.noConfig();
         }
     }
 }

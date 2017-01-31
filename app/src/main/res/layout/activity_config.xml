@@ -8,68 +8,21 @@
     android:id="@+id/linear_config"
     android:weightSum="100">
     <LinearLayout
-        android:id="@+id/linear_loading_config"
-        android:orientation="vertical"
+        android:id="@+id/linear_screen_config"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="100">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="40"></LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="25"
-            android:orientation="horizontal"
-            android:weightSum="100">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"></LinearLayout>
-            <ImageView
-                android:id="@+id/img_loading_config"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-                />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"></LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:layout_weight="10">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorWhite"
-                android:textSize="25sp"
-                android:text="Loading ..."/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="30"></LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linear_screen_config"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"></LinearLayout>
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Configuración a buscar"
+            android:text="Selecciona los datos de búsqueda para los partidos"
             android:textColor="@color/colorWhite"
             android:textSize="22sp"
             android:padding="20dp"
+            android:gravity="center"
             android:textStyle="bold"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,6 +59,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"></LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"></View>
                         <TextView
                             android:id="@+id/tv_sel_country_config"
                             android:layout_width="match_parent"
@@ -116,7 +72,7 @@
                             android:text="Seleccione País"/>
                         <Spinner
                             android:id="@+id/sp_country_config"
-                            android:layout_width="200dp"
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             ></Spinner>
                         <TextView
@@ -129,7 +85,7 @@
                             android:text="Seleccione Ciudad"/>
                         <Spinner
                             android:id="@+id/sp_city_config"
-                            android:layout_width="200dp"
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             ></Spinner>
                         <TextView
@@ -142,36 +98,30 @@
                             android:text="Seleccione Localidad"/>
                         <Spinner
                             android:id="@+id/sp_locality_config"
-                            android:layout_width="200dp"
+                            android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             ></Spinner>
-                        <TextView
-                            android:id="@+id/tv_sel_fecha_config"
+                        <View
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="20sp"
-                            android:gravity="center"
-                            android:text="Seleccione Fecha"/>
+                            android:layout_height="20dp"></View>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:padding="15dp"
                             android:weightSum="100">
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="10"></LinearLayout>
                             <Button
-                                android:id="@+id/btn_sel_fecha_config"
+                                android:id="@+id/btn_sel_date_config"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="40"
                                 android:background="@drawable/btnstyle"
                                 android:textColor="@color/colorWhite"
                                 android:gravity="center"
-                                android:text="DATE"/>
+                                android:text="Fecha desde"/>
                             <TextView
                                 android:id="@+id/tvdateconfig"
                                 android:layout_width="0dp"
@@ -183,6 +133,40 @@
                                 android:text="10-01-2017"/>
 
                         </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"></View>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="10"></LinearLayout>
+                            <Button
+                                android:id="@+id/btn_sel_datefin_config"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="40"
+                                android:background="@drawable/btnstyle"
+                                android:textColor="@color/colorWhite"
+                                android:gravity="center"
+                                android:text="Fecha hasta"/>
+                            <TextView
+                                android:id="@+id/tvdatefinconfig"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="50"
+                                android:gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="20sp"
+                                android:text="10-01-2017"/>
+
+                        </LinearLayout>
+
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

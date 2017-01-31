@@ -156,7 +156,7 @@
                     android:textAlignment="center"
                     app:tabSelectedTextColor="@color/colorPrimaryDark">
                     <android.support.design.widget.TabItem
-                        android:icon="@drawable/lupaanegra"
+                        android:icon="@drawable/searchblack"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         app:theme="@style/AppTheme.ActionBar"

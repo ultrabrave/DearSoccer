@@ -1,24 +1,18 @@
 package cl.enexo.dearsoccer.background;
-
 import android.os.AsyncTask;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import cl.enexo.dearsoccer.views.map.LocationCallback;
 import cl.enexo.dearsoccer.network.GeoGet;
 import cl.enexo.dearsoccer.network.GeoInterceptor;
 import retrofit2.Call;
 import retrofit2.Response;
-
 /**
  * Created by Kevin on 08-01-2017.
  */
-
 public class LocationByAddress extends AsyncTask<String, Void, String[]> {
     private LocationCallback callback;
     public LocationByAddress(LocationCallback callback) {
@@ -27,7 +21,6 @@ public class LocationByAddress extends AsyncTask<String, Void, String[]> {
 
     @Override
     protected String[] doInBackground(String... params) {
-        //TODO this vallidation is pointless we have to make sure the texts are not empty, this texts come from and edit text, so worst case scenario is empty text ""
         if (params.length > 0) {
             String address = "";
             for (String param : params) {

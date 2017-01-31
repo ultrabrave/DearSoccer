@@ -65,6 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 i.putExtra("COUNTRY",intent.getStringExtra("COUNTRY"));
                 i.putExtra("CITY",intent.getStringExtra("CITY"));
                 i.putExtra("LOCALITY",intent.getStringExtra("LOCALITY"));
+                i.putExtra("FROM",intent.getStringExtra("Map"));
                 startActivity(i);
             }
         });
@@ -167,21 +168,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(MapsActivity.this, NewMatchActivity.class);
-        Intent intent = getIntent();
-        i.putExtra("NAME",intent.getStringExtra("NAME"));
-        i.putExtra("DATE",intent.getStringExtra("DATE"));
-        i.putExtra("HOUR",intent.getStringExtra("HOUR"));
-        i.putExtra("PLACE","");
-        i.putExtra("LAT",0.0);
-        i.putExtra("LON",0.0);
-        i.putExtra("DURATION",intent.getStringExtra("DURATION"));
-        i.putExtra("PRICE",intent.getStringExtra("PRICE"));
-        i.putExtra("TYPE",intent.getStringExtra("TYPE"));
-        i.putExtra("DESCRIPTION",intent.getStringExtra("DESCRIPTION"));
-        i.putExtra("COUNTRY",intent.getStringExtra("COUNTRY"));
-        i.putExtra("CITY",intent.getStringExtra("CITY"));
-        i.putExtra("LOCALITY",intent.getStringExtra("LOCALITY"));
-        startActivity(i);
+        super.onBackPressed();
     }
 }

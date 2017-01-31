@@ -8,12 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.country;
-import static android.R.attr.key;
-import static android.R.attr.value;
-import static android.R.attr.y;
-import static android.R.id.list;
-
 /**
  * Created by Kevin on 17-01-2017.
  */
@@ -25,7 +19,10 @@ public class Bd extends SQLiteOpenHelper {
             "LOCALITY TEXT, " +
             "YEAR TEXT, " +
             "MONTH TEXT, " +
-            "DAY TEXT " +
+            "DAY TEXT, " +
+            "YEARFIN TEXT, " +
+            "MONTHFIN TEXT, " +
+            "DAYFIN TEXT " +
             "); " ;
 
     String sqlCreate2 = " CREATE TABLE IF NOT EXISTS COUNTRY ( " +
@@ -58,14 +55,14 @@ public class Bd extends SQLiteOpenHelper {
 
     }
 
-    public void BorrarTablas(SQLiteDatabase db) {
+    public void deleteTables(SQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS Configuration");
         db.execSQL("DROP TABLE IF EXISTS COUNTRY");
         db.execSQL("DROP TABLE IF EXISTS CITY");
         db.execSQL("DROP TABLE IF EXISTS LOCALITY");
     }
 
-    public void CrearTablas(SQLiteDatabase db) {
+    public void createTables(SQLiteDatabase db) {
         db.execSQL(sqlCreate1);
         db.execSQL(sqlCreate2);
         db.execSQL(sqlCreate3);
@@ -112,16 +109,20 @@ public class Bd extends SQLiteOpenHelper {
         }
     }
 
-    public void addConfiguration(SQLiteDatabase db,String country,String city,String locality,String date)
+    public void addConfiguration(SQLiteDatabase db,String country,String city,String locality,String date,String datef)
     {
         String[] arrayaDate = date.split("-");
-        String day = arrayaDate[0];
-        String year = arrayaDate[2];
+        String year = arrayaDate[0];
         String month = arrayaDate[1];
-
-        db.execSQL("DELETE FROM CONFIGURATION");
-        db.execSQL("Insert into CONFIGURATION (COUNTRY,CITY,LOCALITY,YEAR,MONTH,DAY) " +
-                "values('" + country + "','" + city +"','" + locality + "','" + year + "','" + month + "','" + day + "')");
+        String day = arrayaDate[2];
+        String[] arrayaDatef = datef.split("-");
+        String yearfin = arrayaDatef[0];
+        String monthfin = arrayaDatef[1];
+        String dayfin = arrayaDatef[2];
+        deleteTables(db);
+        createTables(db);
+        db.execSQL("Insert into CONFIGURATION (COUNTRY,CITY,LOCALITY,YEAR,MONTH,DAY,YEARFIN,MONTHFIN,DAYFIN) " +
+                "values('" + country + "','" + city +"','" + locality + "','" + year + "','" + month + "','" + day + "','" + yearfin + "','" + monthfin + "','" + dayfin + "')");
     }
 
     public List<String> getCountrys(SQLiteDatabase bd)  {
@@ -130,13 +131,11 @@ public class Bd extends SQLiteOpenHelper {
         SQLiteDatabase db = bd;
         Cursor cursor = db.rawQuery("SELECT DISTINCT value FROM COUNTRY ORDER BY value ASC", null);
         cursor.moveToFirst();
-
         for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
             String value = cursor.getString(0);
             list.add(new String(value));
         }
         cursor.close();
-
         }
         catch (Exception e)
         {
@@ -144,7 +143,6 @@ public class Bd extends SQLiteOpenHelper {
             e.getCause();
             return list;
         }
-
         return list;
     }
 
@@ -168,7 +166,6 @@ public class Bd extends SQLiteOpenHelper {
             e.getCause();
             return list;
         }
-
         return list;
     }
 
@@ -191,12 +188,11 @@ public class Bd extends SQLiteOpenHelper {
             e.getCause();
             return list;
         }
-
         return list;
     }
 
     public String getDateSelected(SQLiteDatabase bd)  {
-        String location = "";
+        String date = "";
         String y = "";
         String m = "";
         String d = "";
@@ -208,7 +204,7 @@ public class Bd extends SQLiteOpenHelper {
                 y = cursor.getString(0);
                 m = cursor.getString(1);
                 d = cursor.getString(2);
-                location = y + "-" + m + "-" + d;
+                date = y + "-" + m + "-" + d;
             }
             cursor.close();
         }
@@ -217,7 +213,32 @@ public class Bd extends SQLiteOpenHelper {
             e.printStackTrace();
             e.getCause();
         }
-        return location;
+        return date;
+    }
+
+    public String getDateFinSelected(SQLiteDatabase bd)  {
+        String date = "";
+        String y = "";
+        String m = "";
+        String d = "";
+        try {
+            SQLiteDatabase db = bd;
+            Cursor cursor = db.rawQuery("SELECT YEARFIN,MONTHFIN,DAYFIN  FROM CONFIGURATION", null);
+            cursor.moveToFirst();
+            for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+                y = cursor.getString(0);
+                m = cursor.getString(1);
+                d = cursor.getString(2);
+                date = y + "-" + m + "-" + d;
+            }
+            cursor.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            e.getCause();
+        }
+        return date;
     }
 
     public String getCountrySelected(SQLiteDatabase bd)  {
@@ -243,7 +264,6 @@ public class Bd extends SQLiteOpenHelper {
 
     public String getCitySelected(SQLiteDatabase bd)  {
         String city = "";
-
         try {
             SQLiteDatabase db = bd;
             Cursor cursor = db.rawQuery("SELECT city  FROM CONFIGURATION", null);
@@ -263,7 +283,6 @@ public class Bd extends SQLiteOpenHelper {
 
     public String getLocalitySelected(SQLiteDatabase bd)  {
         String locality = "";
-
         try {
             SQLiteDatabase db = bd;
             Cursor cursor = db.rawQuery("SELECT locality  FROM CONFIGURATION", null);
@@ -280,5 +299,4 @@ public class Bd extends SQLiteOpenHelper {
         }
         return locality;
     }
-
 }

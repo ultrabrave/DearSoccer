@@ -11,4 +11,95 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <string-array name="hour_array">
+        <item>01</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>00</item>
+    </string-array>
+    <string-array name="minute_array">
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+        <item>00</item>
+    </string-array>
+    <string-array name="chile_money_array">
+        <item>Pesos</item>
+    </string-array>
+    <string-array name="duration_array">
+        <item>1 Hora</item>
+        <item>2 Horas</item>
+        <item>3 Horas</item>
+    </string-array>
+    <string-array name="types_array">
+        <item>Fútbol</item>
+        <item>Futbolito 8</item>
+        <item>Futbolito 7</item>
+        <item>Futbolito 6</item>
+        <item>Baby futbol</item>
+    </string-array>
+        <string-array name="countries_array">
+            <item>chile</item>
+        </string-array>
+    <string-array name="chile_array">
+        <item>santiago</item>
+        <item>afueras santiago</item>
+    </string-array>
+    <string-array name="santiago_array">
+        <item>cerrillos</item>
+        <item>cerro navia</item>
+        <item>conchalí</item>
+        <item>el bosque</item>
+        <item>estacion central</item>
+        <item>huechuraba</item>
+        <item>estacion central</item>
+        <item>independencia</item>
+        <item>la cisterna</item>
+        <item>la florida</item>
+        <item>la pintana</item>
+        <item>la granja</item>
+        <item>la reina</item>
+        <item>lo barnechea</item>
+        <item>lo espejo</item>
+        <item>lo prado</item>
+        <item>macul</item>
+        <item>maipu</item>
+        <item>ñuñoa</item>
+        <item>pedro aguirre cerda</item>
+        <item>peñalolen</item>
+        <item>providencia</item>
+        <item>pudahuel</item>
+        <item>quilicura</item>
+        <item>quinta normal</item>
+        <item>recoleta</item>
+        <item>renca</item>
+        <item>san miguel</item>
+        <item>san joaquin</item>
+        <item>san ramon</item>
+        <item>santiago</item>
+        <item>vitacura</item>
+    </string-array>
+    <string-array name="afueras_santiago_array">
+        <item>padre hurtado</item>
+        <item>san bernardo</item>
+        <item>puente alto</item>
+        <item>pirque</item>
+        <item>san jose del maipo</item>
+    </string-array>
 </resources>

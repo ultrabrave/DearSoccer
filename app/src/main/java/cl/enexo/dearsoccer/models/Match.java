@@ -1,5 +1,8 @@
 package cl.enexo.dearsoccer.models;
 
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import java.util.Date;
 
 /**
