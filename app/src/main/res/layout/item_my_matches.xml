@@ -5,6 +5,7 @@
     android:weightSum="100"
     android:clickable="true"
     android:id="@+id/btn_see_mymatches">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -14,18 +15,32 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:layout_weight="25"
             android:orientation="vertical"
             android:weightSum="100"
             >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="30"></LinearLayout>
+                android:layout_weight="15"></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="30"></LinearLayout>
+                android:background="@drawable/hexa"
+                android:gravity="center"
+                android:layout_weight="70">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/tv_hour_item_mytches"/>
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"></LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -65,8 +80,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="80"
+                    android:textStyle="bold"
                     android:text="Partido 1, Plaza de maipú"
-                    android:textColor="@color/colorBlueDarkPress"
+                    android:textColor="@color/colorBlueDark"
                     android:id="@+id/tv_texto_visible_mymatches"/>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -88,13 +104,35 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="80"
+                    android:textStyle="bold"
                     android:text="COUNTINTEGRANTS"
-                    android:textColor="@color/colorBlueDarkPress"
+                    android:textColor="@color/colorBlueDark"
                     android:id="@+id/tv_countintegrants_item_mymatches"/>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="10"></LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:weightSum="100"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"></LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03-10-2017"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlueDark"
+                    android:id="@+id/tv_date_item_mytches"/>
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -103,7 +141,6 @@
                 android:text="INTEGRANTS"
                 android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_integrants_item_mymatches"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -139,20 +176,7 @@
                 android:text=""
                 android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_idsintegrants_item_mymatches"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0"
-                android:text=""
-                android:textColor="@color/colorBlueDarkPress"
-                android:id="@+id/tv_date_item_mytches"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0"
-                android:text=""
-                android:textColor="@color/colorBlueDarkPress"
-                android:id="@+id/tv_hour_item_mytches"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -219,6 +243,7 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

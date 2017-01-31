@@ -14,19 +14,32 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:layout_weight="25"
             android:orientation="vertical"
             android:weightSum="100"
             >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="30"></LinearLayout>
-
+                android:layout_weight="15"></LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="30"></LinearLayout>
+                android:background="@drawable/hexa"
+                android:gravity="center"
+                android:layout_weight="70">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/tv_hour_item_match"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"></LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -65,7 +78,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textColor="@color/colorBlueDarkPress"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlueDark"
                     android:text="Partido 1, Plaza de maipú"
                     android:id="@+id/tv_texto_visible_match"/>
             </LinearLayout>
@@ -83,7 +97,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="COUNTINTEGRANTS"
-                    android:textColor="@color/colorBlueDarkPress"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlueDark"
                     android:id="@+id/tv_countintegrants_item_match"/>
             </LinearLayout>
             <LinearLayout
@@ -99,19 +114,29 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Horario"
-                    android:textColor="@color/colorBlueDarkPress"
-                    />
+                    android:text="Fecha 16-01-2017"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlueDark"
+                    android:id="@+id/tv_date_item_match"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:weightSum="100"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"></LinearLayout>
                 <View
                     android:layout_width="5dp"
                     android:layout_height="match_parent"
                     ></View>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20:00 hrs"
-                    android:textColor="@color/colorBlueDarkPress"
-                    android:id="@+id/tv_hour_item_match"/>
+
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -156,13 +181,7 @@
                 android:text=""
                 android:textColor="@color/colorBlueDarkPress"
                 android:id="@+id/tv_idsintegrants_item_match"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0"
-                android:text=""
-                android:textColor="@color/colorBlueDarkPress"
-                android:id="@+id/tv_date_item_match"/>
+
 
             <TextView
                 android:layout_width="match_parent"
